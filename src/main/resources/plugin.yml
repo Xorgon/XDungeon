@@ -1,0 +1,74 @@
+name: XDungeon
+version: 1.2.0
+main: ${main.class}
+
+commands:
+  xdungeon:
+    aliases: xd
+    description: XDungeon commands.
+    usage: xdungeon help
+
+permissions:
+  xd.*:
+    description: Allows all '/xdungeon' commands.
+    children:
+      xd.dungeon.*: true
+      xd.room.*: true
+      xd.loot.*: true
+      xd.party.*: true
+      xd.select: true
+  xd.dungeon.*:
+    description: Allows all '/xdungeon dungeon' commands.
+    children:
+      xd.dungeon.create: true
+      xd.dungeon.remove: true
+      xd.dungeon.modify: true
+      xd.dungeon.execute: true
+      xd.dungeon.build: true
+  xd.dungeon.create:
+    description: Allows '/xdungeon dungeon create' command.
+  xd.dungeon.remove:
+    description: Allows '/xdungeon dungeon remove' command.
+  xd.dungeon.modify:
+    description: Allows '/xdungeon dungeon point1/point2/firstroom' commands.
+  xd.dungeon.execute:
+    description: Allows '/xdungeon dungeon start/end' commands.
+  xd.dungeon.build:
+    description: Allows a player to build and destroy in dungeons.
+  xd.room.*:
+    description: Allows all '/xdungeon room' commands.
+    children:
+      xd.room.create: true
+      xd.room.remove: true
+      xd.room.modify: true
+      xd.room.door: true
+  xd.room.create:
+    description: Allows '/xdungeon room create' command.
+  xd.room.remove:
+    description: Allows '/xdungeon room remove' command.
+  xd.room.modify:
+    description: Allows '/xdungeon room point1/point2/nextroom/addloot' commands.
+    children:
+      xd.room.modify.door: true
+  xd.room.modify.door:
+    description: Allows '/xdungeon room door point1/point2/material' commands.
+  xd.loot.*:
+    description: Allows all '/xdungeon loot' commands.
+    children:
+      xd.loot.modify: true
+      xd.loot.give: true
+  xd.loot.modify:
+    description: Allows '/xdungeon loot add/remove/list' commands.
+  xd.loot.give:
+    description: Allows '/xdungeon loot give' command.
+  xd.party.*:
+    description: Allows all '/xdungeon party' commands.
+    chilren:
+      xd.party.manage: true
+      xd.party.participate: true
+  xd.party.manage:
+    description: Allows '/xdungeon party invite/kick/disband' commands.
+  xd.party.participate:
+    description: Allows '/xdungeon party accept/refuse/leave/list' commands.
+  xd.select:
+    description: Allows '/xdungeon select point1/point2' commands.
