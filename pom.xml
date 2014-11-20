@@ -7,7 +7,7 @@
     <name>XDungeon</name>
     <groupId>me.xorgon</groupId>
     <artifactId>xdungeon</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
 
     <properties>
         <package>me.xorgon.xdungeon</package>
